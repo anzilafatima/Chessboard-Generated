@@ -1,2 +1,2 @@
 # Chessboard-Generated
-created a chessboard generated with JavaScript  
+created a chessboard generater with JavaScript  
