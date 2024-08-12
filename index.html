@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cheese-task</title>
+    <style>
+        .chessboard{
+            border-collapse :collapse ;
+
+        }
+        .chessboard td {
+            width: 90px; 
+            height: 0px;
+            border: 1px solid black;
+
+        }
+        .white{
+            background-color: white;
+        }
+        .black{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <label for="rowInput">Enter Row Weight:</label>
+    <input type="number" id="rowInput">
+    <label for="colInput">Enter Colunm Weight:</label>
+    <input type="number" id="colInput">
+    <button onclick="generatechessboard()">Generate Chess Board</button>
+    <table class="chessboard" id="chessboard"></table>
+    <script>
+        function generatechessboard(){
+            var rowHeight = document.getElementById('rowInput').value;
+            var colHeight = document.getElementById('colInput').value;
+            var chessboard = document.getElementById('chessboard');
+            chessboard.innerHTML = '';
+
+            for (var i = 0 ; i < rowHeight ; i ++  ){
+                var row = chessboard.insertRow();
+                for (var j = 0 ; j <colHeight; j ++){
+                    var cell = row.insertCell();
+                    cell.className = (i + j ) % 2 === 0 ? "white" : "black";
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>
